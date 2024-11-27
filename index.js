@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 
 // Import routes
-const authRoutes = require('./routes/auth');
+const authRoutes = require('./auth');
 
 // Initialize dotenv to read .env variables
 dotenv.config();
@@ -35,13 +35,13 @@ app.use('/api/auth', authRoutes);
 
 // Start the server
 
-
-
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
 app.get('/',(req,res)=>{
   return res.json({
     message:"Server UP"
   })
 })
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+
