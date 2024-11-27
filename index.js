@@ -18,8 +18,9 @@ const app = express();
 //   allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
 // };
 app.use(cors({
-  origin:"https://explore-bharat-frontend.vercel.app",
-  credentials:"true",
+  origin: "https://explore-bharat-frontend.vercel.app", // Frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allowed HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers
 }));
 
 // Middleware to parse JSON data
